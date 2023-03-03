@@ -33,7 +33,12 @@ class Viewer:
         
 
     def movie_reviewed(self, movie):
-        pass
+        for review in self.reviews():
+            if review.viewer == self and review.movie == movie:
+                return True
+            else:
+                return False
 
     def rate_movie(self, movie, rating):
+        Review(self, movie, rating)
         pass
