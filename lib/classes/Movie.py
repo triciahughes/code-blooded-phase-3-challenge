@@ -30,7 +30,11 @@ class Movie:
         return movie_viewers
 
     def average_rating(self):
-        pass
+        ratings = []
+        for review in self.reviews():
+            ratings.append(review.rating)
+        return sum(ratings) / len(ratings)
+      
 
     @classmethod
     def highest_rated(cls):
